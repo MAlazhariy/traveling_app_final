@@ -39,7 +39,7 @@ class CategoryItem extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               title,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.4),

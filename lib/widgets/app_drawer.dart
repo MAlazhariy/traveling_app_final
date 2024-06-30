@@ -33,10 +33,10 @@ class AppDrawer extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.only(top: 40),
             alignment: Alignment.center,
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
             child: Text(
               'دليلك السياحي',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           SizedBox(height: 20),
