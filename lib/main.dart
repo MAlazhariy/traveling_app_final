@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './app_data.dart';
-import 'package:traveling_app/screens/categories_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import './screens/filters_screen.dart';
 import './screens/tabs_screen.dart';

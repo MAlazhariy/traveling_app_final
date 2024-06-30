@@ -25,16 +25,12 @@ class TripItem extends StatelessWidget {
     switch (season) {
       case Season.Winter:
         return 'شتاء';
-        break;
       case Season.Spring:
         return 'ربيع';
-        break;
       case Season.Summer:
         return 'صيف';
-        break;
       case Season.Autumn:
         return 'خريف';
-        break;
       default:
         return 'غير معروف';
     }
@@ -44,16 +40,12 @@ class TripItem extends StatelessWidget {
     switch (tripType) {
       case TripType.Exploration:
         return 'استكشاف';
-        break;
       case TripType.Recovery:
         return 'نقاهة';
-        break;
       case TripType.Activities:
         return 'انشطة';
-        break;
       case TripType.Therapy:
         return 'معالجة';
-        break;
       default:
         return 'غير معروف';
     }
