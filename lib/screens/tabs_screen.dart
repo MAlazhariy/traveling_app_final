@@ -24,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
 
   int _selectedScreenIndex = 0;
 
-  List<Map<String, Object>> _screens;
+  late List<Map<String, Object>> _screens;
 
   @override
   void initState() {
@@ -45,10 +45,10 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_screens[_selectedScreenIndex]['Title']),
+        title: Text(_screens[_selectedScreenIndex]['Title']! as String),
       ),
       drawer: AppDrawer(),
-      body: _screens[_selectedScreenIndex]['Screen'],
+      body: _screens[_selectedScreenIndex]['Screen']! as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
         backgroundColor: Theme.of(context).primaryColor,

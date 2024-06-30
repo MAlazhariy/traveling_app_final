@@ -15,7 +15,7 @@ class TripDetailScreen extends StatelessWidget {
       alignment: Alignment.topRight,
       child: Text(
         titleText,
-        style: Theme.of(context).textTheme.headline5,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
     );
   }
@@ -36,7 +36,7 @@ class TripDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tripId = ModalRoute.of(context).settings.arguments as String;
+    final tripId = ModalRoute.of(context)?.settings.arguments as String;
     final selectedTrip = Trips_data.firstWhere((trip) => trip.id == tripId);
 
     return Scaffold(

@@ -14,8 +14,8 @@ class CategoryTripsScreen extends StatefulWidget {
 }
 
 class _CategoryTripsScreenState extends State<CategoryTripsScreen> {
-  String categoryTitle;
-  List<Trip> displayTrips;
+  String? categoryTitle;
+  late List<Trip> displayTrips;
 
   @override
   void initState() {
@@ -25,8 +25,7 @@ class _CategoryTripsScreenState extends State<CategoryTripsScreen> {
 
   @override
   void didChangeDependencies() {
-    final routeArgument =
-        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final routeArgument = ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     final categoryId = routeArgument['id'];
     categoryTitle = routeArgument['title'];
     displayTrips = widget.availableTrips.where((trip) {
@@ -45,7 +44,7 @@ class _CategoryTripsScreenState extends State<CategoryTripsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryTitle),
+        title: Text(categoryTitle??''),
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {

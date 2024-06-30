@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../screens/filters_screen.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({Key key}) : super(key: key);
+  const AppDrawer();
 
-  Widget buildListTile(String title, IconData icon, Function onTapLink) {
+  Widget buildListTile(String title, IconData icon, void Function()? onTapLink) {
     return ListTile(
       leading: Icon(
         icon,
