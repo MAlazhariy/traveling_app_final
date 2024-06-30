@@ -47,8 +47,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _manageFavorite(String tripId) {
-    final existingIndex =
-        _favoriteTrips.indexWhere((trip) => trip.id == tripId);
+    final existingIndex = _favoriteTrips.indexWhere((trip) => trip.id == tripId);
     if (existingIndex >= 0) {
       setState(() {
         _favoriteTrips.removeAt(existingIndex);
@@ -79,33 +78,33 @@ class _MyAppState extends State<MyApp> {
       ],
       title: 'Travel App',
       theme: ThemeData(
+        fontFamily: 'ElMessiri',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headlineSmall: TextStyle(
+                color: Colors.blue,
+                fontSize: 24,
+                fontFamily: 'ElMessiri',
+                fontWeight: FontWeight.bold,
+              ),
+              titleLarge: TextStyle(
+                color: Colors.white,
+                fontSize: 26,
+                fontFamily: 'ElMessiri',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+        colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.blue,
           accentColor: Colors.amber,
-          fontFamily: 'ElMessiri',
-          textTheme: ThemeData.light().textTheme.copyWith(
-                headline5: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 24,
-                  fontFamily: 'ElMessiri',
-                  fontWeight: FontWeight.bold,
-                ),
-                headline6: TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                  fontFamily: 'ElMessiri',
-                  fontWeight: FontWeight.bold,
-                ),
-              )),
+        ),
+      ),
       // home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
         '/': (ctx) => TabsScreen(_favoriteTrips),
-        CategoryTripsScreen.screenRoute: (ctx) =>
-            CategoryTripsScreen(_availableTrips),
-        TripDetailScreen.screenRoute: (ctx) =>
-            TripDetailScreen(_manageFavorite, _isFovarite),
-        FiltersScreen.screenRoute: (ctx) =>
-            FiltersScreen(_filters, _changeFilters),
+        CategoryTripsScreen.screenRoute: (ctx) => CategoryTripsScreen(_availableTrips),
+        TripDetailScreen.screenRoute: (ctx) => TripDetailScreen(_manageFavorite, _isFovarite),
+        FiltersScreen.screenRoute: (ctx) => FiltersScreen(_filters, _changeFilters),
       },
     );
   }
